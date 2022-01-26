@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body {
+    height: 100%;
+    background: #f0f2f5;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 12px;
+
+    position: static;
+    width: 360px;
+    height: 40px;
+    left: 0px;
+    top: 0px;
+
+    /* Neutral / 1 */
+
+    background: #FFFFFF;
+    /* Neutral / 5 */
+
+    border: 1px solid #D9D9D9;
+    box-sizing: border-box;
+    border-radius: 2px;
+
+    /* Inside Auto Layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 28px 0px;
+}
+
+.form-signin {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+
+    position: absolute;
+    width: 360px;
+    height: 250px;
+    left: calc(50% - 360px/2);
+    top: calc(50% - 250px/2);}
+
+
+.form-signin h1 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 32px;
+
+    width: 309px;
+    left: 646px;
+
+    /* or 89% */
+    color: #0043C4;
+}
+
+.form-signin p{
+
+    width: 360px;
+    height: 22px;
+    left: 620px;
+    top: 435px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    /* identical to box height, or 157% */
+
+    margin-top: 40px;
+    align-items: center;
+    text-align: center;
+
+    /* Character / Secondary .45 */
+
+    color: rgba(0, 0, 0, 0.45);
+}
+.form-signin hr {
+    position: static;
+    width: 360px;
+    height: 0px;
+    left: 0px;
+    top: 0px;
+
+    mix-blend-mode: darken;
+    /* Conditional / divider */
+
+    box-sizing: border-box;
+
+}
+
+.form-signin .form-control {
+    height: 40px;
+    padding-left: 31px;
+}
+
+
+.input-login #user{
+    background: url(/src/assets/icons/icons-hover/user.svg) no-repeat scroll 13.3px 12px #FFFFFF;
+}
+#login-button{
+    text-decoration: none;
+    color: white;
+}
+
+.input-login #password{
+    background: url(/src/assets/icons/icons-hover/password.svg) no-repeat scroll 12px 11px #FFFFFF;
+}
+
+
+.form-signin .form-control {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    position: static;
+    width: 360px;
+    height: 40px;
+    left: 0px;
+    top: 0px;
+
+    border: 1px solid #D9D9D9;
+    box-sizing: border-box;
+    border-radius: 2px;
+
+    /* Inside Auto Layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 28px 0px;
+
+}
+
+.form-control ::placeholder {
+    color: #1890FF;
+}
+
+
+.form-signin .btn-primary {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+
+    position: static;
+    width: 360px;
+    height: 40px;
+    left: 0px;
+    top: 160px;
+
+    /* Daybreak Blue / 6 */
+
+    background: #1890FF;
+    /* Daybreak Blue / 6 */
+
+    border: 1px solid #1890FF;
+    box-sizing: border-box;
+    /* drop-shadow / button-primary */
+
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+    border-radius: 2px;
+
+
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    /* Inside Auto Layout */
+
+    flex: none;
+    order: 3;
+    flex-grow: 0;
+    margin: 22px 0px;
+}
+
+

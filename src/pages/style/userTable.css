@@ -1,0 +1,184 @@
+.userTable {
+    height:136px;
+    background-color: white;
+    margin: 25px 24px 24px 24px;
+    width: auto;
+    height: auto;
+}
+
+.upperTableToDo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 24px 0px 24px;
+
+    position: static;
+    width: auto;
+    height: 64px;
+
+
+    /* ◇/HitBox */
+
+    background: rgba(255, 255, 255, 1e-05);
+
+    /* Inside Auto Layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 0px 0px;
+}
+
+.upperTableToDo h5{
+    position: static;
+    width: auto;
+    height: 24px;
+    left: 0px;
+    top: 0px;
+
+    /* Subheading 16 / medium */
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+
+    /* Character / Title .85 */
+
+    color: rgba(0, 0, 0, 0.85);
+
+
+    /* Inside Auto Layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 0px;
+}
+.toDoButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-primary {
+
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 16px;
+
+    position: static;
+    width: auto;
+    height: 32px;
+    left: 0px;
+    top: 0px;
+
+    /* Daybreak Blue / 6 */
+
+    background: #1890FF;
+    /* Daybreak Blue / 6 */
+
+    border: 1px solid #1890FF;
+    box-sizing: border-box;
+    /* drop-shadow / button-primary */
+
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+    border-radius: 2px;
+
+    /* Inside Auto Layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 16px;
+}
+
+#btn-update {
+    /* Auto Layout */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 16px;
+
+    position: static;
+    width: auto;
+    height: 32px;
+    left: 125px;
+    top: 0px;
+
+    /* Neutral / 1 */
+
+    background: #FFFFFF;
+    /* Neutral / 5 */
+
+    border: 1px solid #D9D9D9;
+    box-sizing: border-box;
+    /* drop-shadow / button-secondary */
+
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.016);
+    border-radius: 2px;
+
+    /* Inside Auto Layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 0px 16px;
+}
+
+#btn-reload {
+    /* Auto Layout */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+
+}
+
+.table-box{
+    padding: 0px 18px 16px 24px;
+}
+.page-item a{
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.016);
+    border-radius: 2px;
+    color: black;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    height: 32px;
+
+}
+
+.page-counter a, .page-skipper a{
+    color: black;
+    border: none;
+}
+
+.page-counter a:hover, .page-skipper a:hover{
+    color: black;
+    border: none;
+    background-color: transparent;
+}
+.page-item{
+    padding: 0px 4px 16px 4px;
+}
+
+{
+    border: 1px solid #FAFAFA;
+}

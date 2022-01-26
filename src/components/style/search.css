@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@500&display=swap');
+
+#search-box{
+    height:136px;
+    background-color: white;
+    margin: 25px 24px 24px 24px;
+    width: auto;
+}
+
+.searchActions {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 6fr;
+}
+
+.input-group{
+    padding: 24px 28px 16px 24px;
+    font-family: Roboto;
+    height: 40px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    border: rgba(0, 0, 0, 0.25);
+
+}
+.function-group{
+    padding: 24px 28px 16px 24px;
+    font-family: Roboto;
+    height: 40px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    border: rgba(0, 0, 0, 0.25);
+}
+.function-group #discharge{
+    border-radius: 2px;
+    background:white;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    margin: 0px 4px 0px 4px;
+}
+
+.function-group #apply{
+    border-radius: 2px;
+    background: #1890FF;
+    margin: 0px 4px 0px 4px;
+    color: white;
+}
+
+.function-group a{
+    margin: 0px 12px 0px 12px;
+}
+.function-group a:hover{
+    text-decoration: none;
+}
+
+.input-group button{
+    border-radius: 2px;
+    background: #1890FF;
+    color:white;
+}
+
+
+.input-group input{
+    border-radius: 2px;
+    width:1292px;
+}
+
+
+.input-group input::placeholder {
+    color: rgba(0, 0, 0, 0.25);
+}
+

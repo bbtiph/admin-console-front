@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+.pageHeader {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 24px;
+
+    height: auto ;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+
+    background: #FFFFFF;
+}
+
+.pageHeader label {
+    margin-bottom: 0px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    /* identical to box height, or 157% */
+
+    align-items: center;
+
+    /* Character / Secondary .45 */
+
+    color: rgba(0, 0, 0, 0.45);
+}
+
+.pageHeader label span {
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.alert-primary{
+    bottom: 94px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 9px 16px;
+
+    position: static;
+    width: auto;
+    height: 40px;
+    left: 25px;
+    top: 94px;
+
+    background: #E6F7FF;
+    /* Daybreak Blue / 3 */
+
+    border: 1px solid #91D5FF;
+    box-sizing: border-box;
+    border-radius: 2px;
+    justify-content: space-between;
+
+}
+
+.alert-primary p {
+    position: static;
+    width: auto;
+    height: 22px;
+    left: calc(50% - 1258.11px/2 + 2.05px);
+    top: 0px;
+
+    /* Body 14 / regular */
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    /* identical to box height, or 157% */
+
+
+    /* Character / Title .85 */
+
+    color: rgba(0, 0, 0, 0.85);
+}
+.alert-primary img{
+    margin-right: 5px;
+}
+
+.alert-primary #alert {
+
+    width: 20px;
+    height: 20px;
+}
+
+.alert-primary svg {
+padding-top: 2px;
+}
+
+.pageHeader h5 {
+    position: static;
+
+    left: 0px;
+    top: 0px;
+
+    margin: 12px 0px 12px 0px;
+    /* Heading 20 / bold */
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    /* identical to box height, or 140% */
+
+
+    /* Character / Title .85 */
+
+    color: rgba(0, 0, 0, 0.85);
+
+
+    /* Inside Auto Layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.mainLink a{
+    margin-bottom: 0px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    /* identical to box height, or 157% */
+
+    align-items: center;
+
+
+    /* Character / Secondary .45 */
+
+    color: rgba(0, 0, 0, 0.45);
+}
+
+.infoCreatePage {
+    margin-top: 10px;
+    position: static;
+    height: 22px;
+    left: 0px;
+    top: 0px;
+
+    /* Body 14 / regular */
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    /* identical to box height, or 157% */
+
+
+    /* Character / Title .85 */
+
+    color: rgba(0, 0, 0, 0.85);
+}

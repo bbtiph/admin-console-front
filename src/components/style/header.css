@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+#header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 16px;
+    width: auto;
+    height: 64px;
+    background: #032341;
+    /* border & divider / divider ↓ */
+
+    box-shadow: inset 0px -1px 0px #F0F0F0;
+}
+
+.container-fluid{
+    padding-left: 0;
+}
+.logo {
+
+}
+
+.container-fluid span{
+    position: static;
+    width: 94px;
+    height: 32px;
+    left: 44px;
+    top: 8px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 32px;
+    /* identical to box height, or 178% */
+
+
+    color: #FFFFFF;
+
+
+    /* Inside Auto Layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 0px 12px;
+}
+
+.admin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 8px 0px 0px;
+
+    position: static;
+    width: 32px;
+    height: 24px;
+    left: 12px;
+    top: 0px;
+
+
+    /* Inside Auto Layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 0px;
+}
+.admin span {
+    /* text */
+
+    /* Body 14 / regular */
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    /* identical to box height, or 157% */
+
+
+    /* Character / Primary(inverse) */
+
+    color: #FFFFFF;
+}
+
+
+
+
+
+
+

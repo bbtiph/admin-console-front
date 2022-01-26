@@ -1,0 +1,167 @@
+.content {
+    grid-area: c;
+    background-color: white;
+}
+
+.blocks {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-gap: 10px;
+}
+
+.photoUrl {
+    width: 80px;
+}
+
+.selected {
+    font-weight:bold
+}
+
+.logoResetPassModal {
+    width: 22px;
+    height: 22px;
+}
+
+.resetPassModal {
+    display: grid;
+    grid-template-columns: 0.7fr 12fr ;
+    grid-gap: 10px;
+}
+
+.text1ResetPassModal {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.85);
+
+    flex: none;
+    align-self: stretch;
+}
+
+.text2ResetPassModal {
+    position: static;
+    width: 447px;
+    height: 24px;
+    left: calc(50% - 447px/2);
+    top: 32px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.actionsResetPassModal {
+    display: grid;
+    grid-template-columns: 8fr 15fr 1.5fr;
+}
+.actionsSuccessDeletedModal {
+    padding-left: 25%;
+    padding-right: 25%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.actionsSuccessDeletedModal2 {
+    padding-left: 25%;
+    padding-right: 25%;
+    display: grid;
+    grid-template-columns: 1fr 0fr;
+}
+
+.text1SuccessDeletedModal{
+    width: 252px;
+    height: 22px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.45);
+    margin: 0 auto;
+    max-width: 100%;
+
+}
+
+.text1NotSuccessDeletedModal{
+    width: 410px;
+    height: 22px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.45);
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.text1Modal{
+    width: 290px;
+    height: 22px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.45);
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.text2WarningModal{
+    width: 605px;
+    height: 22px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.45);
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.text2SuccessDeletedModal{
+    margin: 0 auto;
+    max-width: 100%;
+    text-align: center;
+    width: 457px;
+    height: 43px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.text1WarningModal{
+    margin: 0 auto;
+    max-width: 100%;
+    text-align: center;
+    width: 470px;
+    height: 43px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.modalDescNotSuccessDeleted {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 40px;
+
+    width: 680px;
+    height: 144px;
+    background: #FAFAFA;
+}
+
+.descErrors {
+    display: grid;
+    grid-template-columns: 1fr 20fr;
+}
+
+
