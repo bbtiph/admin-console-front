@@ -19,16 +19,16 @@ import Modal from "../../Common/Modal/modal";
 
 function Search(props2) {
   const [isOpenModalSetParam, setIsOpenModalSetParam] = useState(false);
-  const [isFieldForSearch, setIsFieldForSearch] = useState(props2.fields[0]);
+  const [isFieldForSearch, setIsFieldForSearch] = useState(props2.fields[0].value);
   const [isTextForSearch, setIsTextForSearch] = useState("");
 
 
   const options = [];
 
-  let isField;
+  let isField = props2 ?? props2.fields[0].field;
 
   props2.fields.map((field, i) => {
-    let option = { value: field, label: field };
+    let option = { value: field.field, label: field.value };
     options.push(option);
   })
 
@@ -58,20 +58,49 @@ function Search(props2) {
         </div>
         <div className="function-group mb-3">
           <div className="searchActions">
-            <button type="button" className="btn" id="discharge" onClick={() => {
-              setIsFieldForSearch("")
-              setIsTextForSearch("")
-            }}>Сбросить</button>
             <button type="button" className="btn" id="apply" onClick={() => {
-              setIsFieldForSearch(isField ? isField : isFieldForSearch);
-            }}>Применить</button>
+              setIsTextForSearch("")
+              console.log(isFieldForSearch)
+            }}>Сбросить</button>
+            {/*<button type="button" className="btn" id="apply" onClick={() => {*/}
+            {/*  console.log('rr/', isField);*/}
+            {/*  debugger*/}
+
+            {/*  setIsFieldForSearch(isField);*/}
+            {/*}}>Применить</button>*/}
             <select className="form-control" id="userRoles" onChange={(e) => {
-              isField = e.target.value
+              switch (e.target.value) {
+                case 'ИИН':
+                  debugger
+                  isField = 'IIN';
+                  setIsFieldForSearch(isField);
+                  break;
+
+                case 'Имя':
+                  debugger
+                  isField = 'FIRST_NAME';
+                  setIsFieldForSearch(isField);
+                  break;
+
+                case 'Фамилия':
+                  debugger
+                  isField = 'LAST_NAME';
+                  setIsFieldForSearch(isField);
+                  break;
+
+                case 'Номер мобильного телефона':
+                  debugger
+                  isField = 'MOBILE_NUMBER';
+                  setIsFieldForSearch(isField);
+                  break;
+              }
+              console.log(isFieldForSearch)
+              debugger
             }}>
               {
                 options.map((option, i) => (
-                  <option>
-                    {option.label}
+                  <option key={option.field}>
+                    {option.value}
                   </option>
                 ))
               }

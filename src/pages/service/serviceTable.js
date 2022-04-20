@@ -79,7 +79,10 @@ export default function ServiceTable(props) {
           <h5>Услуги и сервисы</h5>
         </div>
 
-        <Search fields={[NAME_OF_SERVICE, TYPE, IS_ACTIVE]} searchFunction={searchFunction}
+        <Search fields={[{field: 'Наименование сервиса/услуги', value: NAME_OF_SERVICE},
+          {field: 'Тип подключения', value: TYPE},
+          {field: 'Активирован', value: IS_ACTIVE},
+        ]}searchFunction={searchFunction}
           onChangePage={props.onChangePage} />
 
         <div className="serviceTable">

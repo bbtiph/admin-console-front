@@ -53,11 +53,11 @@ function NavSidebar({ history }) {
             </Link>
           </li>
 
-          <li id="trash">
-            <Link to="/">
-              <img src={trash} alt={"trash"} />Корзина
-            </Link>
-          </li>
+          {/*<li id="trash">*/}
+          {/*  <Link to="/">*/}
+          {/*    <img src={trash} alt={"trash"} />Корзина*/}
+          {/*  </Link>*/}
+          {/*</li>*/}
         </ul>
         {/*<Navigation*/}
         {/*    // you can use your own router's api to get pathname*/}

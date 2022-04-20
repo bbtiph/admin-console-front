@@ -52,6 +52,8 @@ const UserTable = (props) => {
   const [isOpenModalDoneOperation, setIsOpenModalDoneOperation] = useState(false);
   const [isOpenModalSomeProblemOperation, setIsOpenModalSomeProblemOperation] = useState(false);
   const [isSelectedUser, setIsSelectedUser] = useState(null);
+  const [usersLogin, setUsersLogin] = useState([]);
+  const [isCountOfSelectedRows, setIsCountOfSelectedRows] = useState(0);
 
   const [isFirstPassword, setIsFirstPassword] = useState("");
   const [isSecondPassword, setIsSecondPassword] = useState("");
@@ -119,20 +121,21 @@ const UserTable = (props) => {
     }
   }
 
-  let isCountOfSelectedRows = 0;
+  // let isCountOfSelectedRows = 0;
 
-  let usersLogin = [];
+  // let usersLogin = [];
   let addUserToArray = (login) => {
     if (usersLogin.indexOf(login) == -1) {
       usersLogin.push(login);
-      isCountOfSelectedRows++;
+      setIsCountOfSelectedRows(isCountOfSelectedRows+1);
     } else {
       usersLogin[usersLogin.indexOf(login)] = null;
-      isCountOfSelectedRows--;
+      setIsCountOfSelectedRows(isCountOfSelectedRows-1);
     }
   }
 
   let selectingOnlyOneUser = (param) => {
+    console.log('t>>', usersLogin, isCountOfSelectedRows)
     if (isCountOfSelectedRows == 1) {
       isListOfUsers.map((user, i) => {
         if (usersLogin.indexOf(user.login) != -1) {
@@ -197,7 +200,11 @@ const UserTable = (props) => {
       <Component />
       <div className="page-wrapper">
         <PageHeader />
-        <Search fields={[IIN, MOBILE_NUMBER, FIRST_NAME, LAST_NAME]}
+        <Search fields={[{field: 'ИИН', value: IIN},
+          {field: 'Имя', value: IIN},
+          {field: 'Фамилия', value: IIN},
+          {field: 'Номер мобильного телефона', value: IIN},
+        ]}
           searchFunction={searchFunction}
           onChangePage={props.onChangePage} />
         <div className="userTable">
@@ -365,7 +372,9 @@ const UserTable = (props) => {
       </div>
       {
         isOpenResetPassModal ? (
-          <Modal center="center" maxWidth="605px" close={() => setIsOpenResetPassModal(false)}>
+          <Modal center="center" maxWidth="605px" close={() => {
+            setIsOpenResetPassModal(false);
+          }}>
             <div className="resetPassModal">
               <div className="logoResetPassModal">
                 <img src={alert1} alt="" style={{ color: "red" }} />
@@ -385,7 +394,37 @@ const UserTable = (props) => {
                   setIsOpenResetPassModal(false)
                   setIsOpenChangePassModal(true)
                 }}>Сбросить пароль</button>
-                <button type="button" className="btn" id="apply" style={{ fontSize: '13px' }}>
+                <button type="button" className="btn" id="apply" style={{ fontSize: '13px' }} onClick={() => {
+                  const config = {
+                    headers: { 'Authorization': `Bearer ${JSON.parse(localStorage.getItem('token'))}` }
+                  };
+
+                  let endpoint = '/admin-console-app/crm-server/api/reset-password';
+
+                  const queryString = new URLSearchParams();
+                  queryString.set('login', isSelectedUser.login ?? "");
+                  queryString.set('type', "login");
+
+                  axios.get(`${endpoint}?${queryString.toString()}`, config).then(
+                    res => {
+                      if (res.status >= 200 && res.status <= 299) {
+                        swal.fire(('Успешно'), '', 'success');
+                      } else {
+                        swal.fire(
+                          ('Ошибка'),
+                          ('Ваш токен не валидный.'),
+                          'error',
+                        );
+                      }
+                    }
+                  ).catch(() => {
+                    swal.fire(
+                      ('Ошибка'),
+                      ('Ваш токен не валидный.'),
+                      'error',
+                    );
+                  });
+                }}>
                   Обнулить счетчик набора пароля
                 </button>
                 <button className="btn" id="discharge" style={{ fontSize: '13px' }}

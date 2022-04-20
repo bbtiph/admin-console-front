@@ -23,6 +23,7 @@ function CreateUser(props) {
   const [isEmail, setIsEmail] = useState(null);
   const [isRole, setRole] = useState(null);
   const [isPassword, setIsPassword] = useState(null);
+  const [isLogin, setIsLogin] = useState(null);
 
   const [isOpenModalSuccessSaved, setIsOpenModalSuccessSaved] = useState(false);
 
@@ -31,6 +32,7 @@ function CreateUser(props) {
   useEffect(() => {
 
     if (props.isRefactoring) {
+      setIsLogin(props.userDto.login);
       setIsIin(props.userDto.iin);
       setIsFullName(props.userDto.firstName + " " + props.userDto.lastName + " " + props.userDto.middleName);
       if (props.userDto.birthDate) setIsBirthDay(props.userDto.birthDate.slice(0, 10));
@@ -40,8 +42,6 @@ function CreateUser(props) {
   }, []);
 
   const isRoleChanged = (e) => {
-    debugger
-    console.log('eee', e);
     setRole(e)
   }
 
@@ -83,16 +83,15 @@ function CreateUser(props) {
       };
       let data = {
         fullName: isFullName,
-        login: isIin,
+        login: isLogin,
         mobileNumber: isPhoneNumber,
         password: isPassword,
         birthDate: isBirthDay,
         userRole: isRole != null ? isRole : "ROLE_USER",
-        email: isEmail
+        email: isEmail,
+        iin: isIin
       }
-      debugger
-      console.log(data, '<<tttt');
-      debugger
+
       if (param) {
         axios.post(`/admin-console-app/crm-server/api/createUser`, data, config).then(
           res => {
@@ -107,7 +106,8 @@ function CreateUser(props) {
             }
           }
         ).catch(err => {
-            swal.fire(('Ошибка'), 'Пользователь с таким логином/ИИН уже зарегистрирован.', 'error');
+          debugger
+            swal.fire(('Ошибка'), err.response.data.messageRu, 'error');
           }
         );
       } else {
@@ -123,7 +123,9 @@ function CreateUser(props) {
               swal.fire(('Ошибка'), '', 'error');
             }
           }
-        );
+        ).catch(err => {
+          swal.fire(('Ошибка'), err.response.data.messageRu, 'error');
+        });
 
       }
     } else {
@@ -163,13 +165,11 @@ function CreateUser(props) {
               {
                 !props.isRefactoring ? <div className="p-2">
                   <button style={{border: 'none'}} onClick={() => {
-                    console.log(isBirthDay, ' <<tyt')
                     addUser(true)
                   }}>Сохранить
                   </button>
                 </div> : <div className="p-2">
                   <button style={{border: 'none'}} onClick={() => {
-                    console.log(isBirthDay, ' <<tyt')
                     addUser(false)
                   }}>Изменить
                   </button>
@@ -193,6 +193,11 @@ function CreateUser(props) {
                          onChange={(event) => setIsFullName(event.target.value)}/>
                 </div>
                 <div className="col">
+                  <label htmlFor="exampleFormControlInput1" className="form-label">Логин</label>
+                  <input type="text" className="form-control" id="exampleFormControlInput1" value={isLogin}
+                         onChange={(event) => setIsLogin(event.target.value)}/>
+                </div>
+                <div className="col">
                   <label htmlFor="exampleFormControlInput1" className="form-label">Дата
                     рождения</label>
                   {/*<input type="text" className="form-control" id="exampleFormControlInput1" value={isBirthDay}*/}
@@ -205,12 +210,6 @@ function CreateUser(props) {
                            setIsBirthDay(event.target.value)
                          }}/>
                 </div>
-
-                {!props.isRefactoring ? <div className="col">
-                  <label htmlFor="exampleFormControlInput1" className="form-label">Пароль</label>
-                  <input type="password" className="form-control"
-                         onChange={(event) => setIsPassword(event.target.value)}/>
-                </div> : null}
               </div>
 
             </form>
@@ -218,6 +217,11 @@ function CreateUser(props) {
           <div className="createUserForm">
             <form action="">
               <div className="row">
+                {!props.isRefactoring ? <div className="col">
+                  <label htmlFor="exampleFormControlInput1" className="form-label">Пароль</label>
+                  <input type="password" className="form-control"
+                         onChange={(event) => setIsPassword(event.target.value)}/>
+                </div> : null}
                 <div className="col">
                   <label htmlFor="exampleFormControlInput1" className="form-label">Номер
                     телефона</label>
